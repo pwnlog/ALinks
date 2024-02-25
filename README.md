@@ -155,7 +155,6 @@ Custom SSP:
 - Kerberoasting: 
     - https://www.netwrix.com/cracking_kerberos_tgs_tickets_using_kerberoasting.html 
     - https://deephacking.tech/as-reqroasting-as-reproasting-y-tgs-reproasting-kerberoasting-kerberos/
-- Kerberoasting Configurations:
 - Kerberoasting Attacks:
     - https://www.crowdstrike.com/cybersecurity-101/kerberoasting/
     - https://www.sentinelone.com/cybersecurity-101/what-is-kerberoasting-attack/
@@ -170,11 +169,15 @@ Custom SSP:
 - Kerberoasting Defenses:
     - https://www.lepide.com/blog/how-to-prevent-kerberoasting-attacks/
 
+### Timeroasting
+
+- Timeroasting Attacks:
+    - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-roasting-kerberoasting/
+
 ### AS-REP Roasting
 
 - AS-REP Roasting:
     - https://deephacking.tech/as-reqroasting-as-reproasting-y-tgs-reproasting-kerberoasting-kerberos/
-- AS-REP Roasting Configurations:
 - AS-REP Roasting Attacks:
     - https://redfoxsec.com/blog/as-rep-roasting/
     - https://blog.netwrix.com/2022/11/03/cracking_ad_password_with_as_rep_roasting/
@@ -194,7 +197,6 @@ Custom SSP:
 - AS-REQ Roasting Detections:
 - AS-REQ Roasting Defenses:
 
-
 ### Kerberos Diamond Tickets 
 
 - Kerberos Diamond Tickets Attacks:
@@ -209,6 +211,7 @@ Custom SSP:
 
 - Kerberos Golden Tickets Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/golden
+    - https://www.youtube.com/watch?v=v0xKYSkyI6Q
 - Kerberos Golden Tickets Detections:
 - Kerberos Golden Tickets Defenses:
 - Prevent Kerberos Golden Tickets:
@@ -219,6 +222,7 @@ Custom SSP:
 - Kerberos Silver Tickets Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/silver
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/silver-ticket.md
+    - https://www.youtube.com/watch?v=k9IGSmZaEHk
 - Kerberos Silver Tickets Detections:
 - Kerberos Silver Tickets Defenses:
 - Prevent Kerberos Silver Tickets:
@@ -258,7 +262,6 @@ Custom SSP:
     - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/domain-compromise-via-unrestricted-kerberos-delegation
     - https://deephacking.tech/unconstrained-delegation-kerberos/
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/unconstrained
-- Kerberos Unconstrained Configurations:
 - Kerberos Unconstrained Attacks:
 - Kerberos Unconstrained Detections:
 - Kerberos Unconstrained Defenses:
@@ -268,9 +271,12 @@ Custom SSP:
 
 - Kerberos Constrained Configurations:
     - S4U2Proxy
+        - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a
     - S4U2Self
+        - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sfu/02636893-7a1f-4357-af9a-b672e3e3de13
         - https://www.thehacker.recipes/ad/movement/kerberos/delegations/s4u2self-abuse
     - S4U2Self and S4U2Proxy
+        - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a
 - Kerberos Constrained Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained
 - Kerberos Constrained Detections:
@@ -281,7 +287,6 @@ Custom SSP:
 
 ### Kerberos Resource-Based Constrained Delegation (RBCD)
 
-- Kerberos Resource-Based Constrained Configurations:
 - Kerberos Resource-Based Constrained Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/resource-based-constrained-delegation.md
@@ -292,7 +297,6 @@ Custom SSP:
 
 ### Kerberos Pass The Certificate
 
-- Kerberos Pass The Certificate Configurations:
 - Kerberos Pass The Certificate Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/pass-the-certificate
 - Kerberos Pass The Certificate Detections:
@@ -426,6 +430,7 @@ Custom SSP:
     - https://www.infosecmatter.com/metasploit-module-library/?mm=auxiliary/spoof/mdns/mdns_response
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/llmnr-nbtns-mdns-spoofing
 - mDNS Detection:
+    - Filter port 5353/UDP traffic
 - Disable mDNS: 
     - https://techcommunity.microsoft.com/t5/networking-blog/mdns-in-the-enterprise/ba-p/3275777
 
@@ -440,7 +445,6 @@ Custom SSP:
 
 ## WPAD
 
-- WPAD Configurations:
 - WPAD Attacks:
     - https://notes.justin-p.me/notes/methodology/internal/active-directory/wpad/
 - WPAD Detections:
@@ -479,8 +483,6 @@ Custom SSP:
     - https://www.eventsentry.com/validationscripts/guid/1c1e3c39-98a3-41cb-8bf1-1a5f36a6c950
     - https://learn.microsoft.com/en-us/windows-server/administration/server-manager/configure-remote-management-in-server-manager#to-enable-server-manager-remote-management-by-using-the-command-line
     - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-7.4&viewFallbackFrom=powershell-7
-- WinRM Configuration via GPO:
-- WinRM Configuration via PowerShell:
 - WinRM Detections:
     - https://www.elastic.co/guide/en/security/current/incoming-execution-via-winrm-remote-shell.html
     - https://in.security/2021/05/03/detecting-lateral-movement-via-winrm-using-kql/
@@ -521,10 +523,13 @@ Custom SSP:
     - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/deployment-wsus/
     - https://github.com/nettitude/SharpWSUS
     - https://sixdub.medium.com/remote-weaponization-of-wsus-mitm-89c47a8c2561
-- WSUS Configuration via GPO:
-- WSUS Configuration via PowerShell:
 - Prevent Rogue WSUS Updates:
     - https://4sysops.com/archives/wsus-security-changes/
+
+## Active Directory Federation Services
+
+ADFS Golden SAML:
+- https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-adfs-federation-services/
 
 ## SSH
 
@@ -537,7 +542,6 @@ Custom SSP:
 
 ## DFS
 
-- DFS Configuration:
 - DFS Attack:
     - https://github.com/Wh04m1001/DFSCoerce
     - https://www.praetorian.com/blog/how-to-leverage-dfscoerce/
@@ -547,7 +551,6 @@ Custom SSP:
 
 ## MSSQL
 
-- MSSQL Configurations:
 - MSSQL Attacks:
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server/types-of-mssql-users.md
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server/README.md
@@ -556,7 +559,6 @@ Custom SSP:
 
 ## Active Directory Integrated DNS (ADIDNS)
 
-- ADIDNS Configurations:
 - ADIDNS Attacks:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/adidns-spoofing
 - ADIDNS Detections:
@@ -564,7 +566,6 @@ Custom SSP:
 
 ## Microsoft's Encrypting File System Remote (MS-EFSR)
 
-- MS-EFSR Configurations:
 - MS-EFSR Attacks:
     - https://www.truesec.com/hub/blog/mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-adv210003-kb5005413-petitpotam
     - https://threatmon.io/blog/petitpotam-ms-efsrpc-exploit-cve2021-36942/
@@ -574,7 +575,6 @@ Custom SSP:
 
 ## Microsoft’s Print Spooler (MS-RPRN)
 
-- MS-RPRN Configurations:
 - MS-RPRN Attacks:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-rprn
 - MS-RPRN Detections:
@@ -582,7 +582,6 @@ Custom SSP:
 
 ## Microsoft's File Server Remote VSS (MS-FSRVP)
 
-- MS-FSRVP Configurations:
 - MS-FSRVP Attacks:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-fsrvp
 - MS-FSRVP Detections:
@@ -590,11 +589,15 @@ Custom SSP:
 
 ## Microsoft's Distributed File System Namespace Management (MS-DFSNM)
 
-- MS-DFSNM Configurations:
 - MS-DFSNM Attacks:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-dfsnm
 - MS-DFSNM Detections:
 - MS-DFSNM Defenses:
+
+# Read Only Domain Controller
+
+RODC Attacks:
+- https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-adds-rodc/
 
 # Active Directory Certificate Services
 
@@ -617,7 +620,6 @@ CA Two Tier:
 
 ## ESC1
 
-- ESC1 Configurations:
 - ESC1 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc1
     - https://www.blackhillsinfosec.com/abusing-active-directory-certificate-services-part-one/
@@ -627,7 +629,6 @@ CA Two Tier:
 
 ## ESC2
 
-- ESC2 Configurations:
 - ESC2 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc2
 - ESC2 Detections:
@@ -636,7 +637,6 @@ CA Two Tier:
 
 ## ESC3
 
-- ESC3 Configurations:
 - ESC3 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc3
 - ESC3 Detections:
@@ -645,7 +645,6 @@ CA Two Tier:
 
 ## ESC4
 
-- ESC4 Configurations:
 - ESC4 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc4
 - ESC4 Detections:
@@ -654,7 +653,6 @@ CA Two Tier:
 
 ## ESC5
 
-- ESC5 Configurations:
 - ESC5 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc5
 - ESC5 Detections:
@@ -662,7 +660,6 @@ CA Two Tier:
 
 ## ESC6
 
-- ESC6 Configurations:
 - ESC6 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc6
 - ESC6 Detections:
@@ -671,7 +668,6 @@ CA Two Tier:
 
 ## ESC7
 
-- ESC7 Configurations:
 - ESC7 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc7
 - ESC7 Detections:
@@ -680,7 +676,6 @@ CA Two Tier:
 
 ## ESC8
 
-- ESC8 Configurations:
 - ESC8 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc8
 - ESC8 Detections:
@@ -689,7 +684,6 @@ CA Two Tier:
 
 ## ESC9
 
-- ESC9 Configurations:
 - ESC9 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc9
     - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/adcs-+-petitpotam-ntlm-relay-obtaining-krbtgt-hash-with-domain-controller-machine-certificate
@@ -698,7 +692,6 @@ CA Two Tier:
 
 ## ESC10
 
-- ESC10 Configurations:
 - ESC10 Attacks:
     - https://luemmelsec.github.io/Skidaddle-Skideldi-I-just-pwnd-your-PKI/#esc10
 - ESC10 Detections:
@@ -706,7 +699,6 @@ CA Two Tier:
 
 ## ESC11
 
-- ESC11 Configurations:
 - ESC11 Attacks:
     - https://heartburn.dev/exploiting-active-directory-certificate-services-esc11-walkthrough/
     - https://blog.compass-security.com/2022/11/relaying-to-ad-certificate-services-over-rpc/
@@ -797,6 +789,7 @@ Trust key:
     - https://www.thehacker.recipes/ad/persistence/sid-history
     - https://attack.mitre.org/techniques/T1134/005/
     - https://adsecurity.org/?p=1772
+    - https://book.hacktricks.xyz/windows-hardening/active-directory-methodology/sid-history-injection
 - Extra SID Detections:
     - https://www.sentinelone.com/blog/windows-sid-history-injection-exposure-blog/
 - Extra SID Defenses:
@@ -824,8 +817,29 @@ Trust key:
 ### Extra SIDs Child/Parent
 
 - Extra SID Child/Parent Attacks:
+    - https://blog.improsec.com/tech-blog/sid-filter-as-security-boundary-between-domains-part-2-known-ad-attacks-from-child-to-parent
 - Extra SID Child/Parent Detections:
 - Extra SID Child/Parent Defenses:
+
+# Access Tokens
+
+Access Tokens:
+- https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens
+Access Tokens Attacks:
+- https://hideandsec.sh/books/windows-sNL/page/in-the-potato-family-i-want-them-all
+- https://github.com/foxglovesec/Potato
+- https://github.com/foxglovesec/RottenPotato
+- https://github.com/decoder-it/lonelypotato
+- https://github.com/ohpe/juicy-potato
+- https://shenaniganslabs.io/2019/11/12/Ghost-Potato.html
+- https://github.com/CCob/SweetPotato
+- https://github.com/itm4n/PrintSpoofer
+- https://github.com/antonioCoco/RoguePotato
+- https://github.com/micahvandeusen/GenericPotato
+- https://github.com/antonioCoco/RemotePotato0
+- https://github.com/antonioCoco/JuicyPotatoNG
+- https://github.com/decoder-it/LocalPotato
+- https://github.com/hackvens/CoercedPotato
 
 # Discretionary Access Control Lists (DACLs) and Access Control Entries (ACEs)
 
@@ -926,6 +940,9 @@ Group Policy Objects (GPOs) documentation:
 - https://learn.microsoft.com/en-us/previous-versions/windows/desktop/policy/group-policy-hierarchy
 - https://learn.microsoft.com/en-us/previous-versions/windows/desktop/policy/policy-processing
 
+GPO Attacks:
+- https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-adds-group-policy-objects/
+
 ## GPO Scopes
 
 GPO scopes documentations:
@@ -982,9 +999,11 @@ Active Directory groups:
 
 # DCOM
 
-DCOM Attacks:
+- DCOM Attacks:
     - DCOM:
         - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/internal-dcom/
+        - https://github.com/ScorpionesLabs/DVS
+        - https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
     - DCOM via MMC Application Class
         - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md#dcom-via-mmc-application-class
     - DCOM via Excel
@@ -993,6 +1012,9 @@ DCOM Attacks:
         - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md#dcom-via-shellexecute
     - DCOM via ShellBrowserWindow
         - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md#dcom-via-shellbrowserwindow
+- DCOM Defenses:
+    - https://www.flexwareinnovation.com/hardening-your-systems-against-the-dcom-vulnerability-what-manufacturers-need-to-know/
+    - https://support.microsoft.com/en-us/topic/how-to-disable-dcom-support-in-windows-2bb8c280-9698-7f9c-bf67-2625a5873c7b
 
 # Comments
 
@@ -1013,11 +1035,16 @@ Shadow Credentials:
 
 - Group Managed Service Accounts (gMSA):
     - https://learn.microsoft.com/en-us/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview
+    - https://youtu.be/E_-iABSDx0Q?si=8dQbvpMcitpvvah7&t=444
+    - https://www.youtube.com/watch?v=mHZ6MqWubd8&t=24s
 - Group Managed Service Accounts (gMSA) Attacks:
     - https://www.semperis.com/blog/golden-gmsa-attack/
     - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/pwd-read-gmsa/
+    - https://www.youtube.com/watch?v=mHZ6MqWubd8
 - Group Managed Service Accounts (gMSA) Detections:
+    - https://www.trustedsec.com/blog/splunk-spl-queries-for-detecting-gmsa-attacks
 - Group Managed Service Accounts (gMSA) Defenses:
+    - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/recover-from-golden-gmsa-attack
 
 # System Services
 
@@ -1139,6 +1166,7 @@ Unquoted Paths aren't enclosed with quotation marks (") and therefore it's inter
     - https://swisskyrepo.github.io/InternalAllTheThings/redteam/escalation/windows-privilege-escalation/#eop---unquoted-service-paths
     - https://www.ired.team/offensive-security/privilege-escalation/unquoted-service-paths
     - https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae
+    - https://www.youtube.com/watch?v=WWE7VIpgd5I
 - Unquoted Paths Detections:
 - Unquoted Paths Defenses:
     - https://isgovern.com/blog/how-to-fix-the-windows-unquoted-service-path-vulnerability/
@@ -1275,6 +1303,7 @@ DPAPI:
     - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-adds-ntds-dumping/
     - https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds
     - https://attack.mitre.org/techniques/T1003/003/
+    - https://www.youtube.com/watch?v=Qy8INpl0Al4
 - NTDS Detections:
 - NTDS Defenses:
 
@@ -1317,11 +1346,17 @@ LSA (Local Security Authority) and LSASS (Local Security Authority Subsystem Ser
 
 In summary, LSA is the conceptual framework and set of processes responsible for security policies and authentication, while LSASS is the specific system service that implements and manages LSA functionality within the Windows operating system.
 
+- LSA Configuration:
+    - https://www.thewindowsclub.com/how-to-enable-local-security-authority-lsa-protection-in-windows
+    - https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection
 - LSA Attacks:
     - https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/credential-dumping/lsa-secrets
     - https://www.thehacker.recipes/ad/movement/credentials/dumping/sam-and-lsa-secrets
     - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsa-secrets
+    - https://attack.mitre.org/techniques/T1003/004/
+    - https://itm4n.github.io/lsass-runasppl/
 - LSA Detections:
+    - https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/
 - LSA Defenses:
     - https://blog.netwrix.com/2022/01/11/understanding-lsa-protection/
     - https://learn.microsoft.com/en-us/answers/questions/1422926/lsa-protection-and-attack-surface-rules
@@ -1365,6 +1400,7 @@ In summary, LSA is the conceptual framework and set of processes responsible for
 
 - DCShadow Attacks:
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/dcshadow.md
+    - https://www.youtube.com/watch?v=iGcei7yk2Pk
 - DCShadow Detections:
 - DCShadow Defenses:
 
@@ -1372,8 +1408,24 @@ In summary, LSA is the conceptual framework and set of processes responsible for
 
 - DCSync Attacks:
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/dcsync.md
+    - https://www.youtube.com/watch?v=_m3u13Df7Fc
 - DCSync Detections:
 - DCSync Defenses:
+
+## AdminDSHolder
+
+- AdminSDHolder Attacks:
+    - https://www.youtube.com/watch?v=lY35jQ46iPo
+
+## DLL Hijacking Persistence
+
+- DLL Hijacking Attacks:
+    - https://www.youtube.com/watch?v=3eROsG_WNpE
+
+# AD Attribute 
+
+- AD Attribute Takeover Attacks:
+    - https://www.youtube.com/watch?v=tFb3ow25iNg
 
 # MiTM
 
@@ -1382,6 +1434,8 @@ MiTM Attacks:
 - https://github.com/frostbits-security/MITM-cheatsheet
 
 # Classic Vulnerabilities
+
+> Overall recommendation is to use a patch management platform to keep every asset updated with the latests patches.
 
 Certifried CVE-2022-26923: 
 - MSRC: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26923
