@@ -943,6 +943,7 @@ Trust key:
 
 Access Tokens:
 - https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens
+
 Access Tokens Attacks:
 - https://hideandsec.sh/books/windows-sNL/page/in-the-potato-family-i-want-them-all
 - https://github.com/foxglovesec/Potato
@@ -1600,7 +1601,7 @@ Kerberos Could Allow Elevation of Privilege MS14-068 / CVE-2014-6324:
 
 SamAccountName CVE-2021-42287 / NoPAC CVE-2021-42278:
 - MSRC: 
-    - ://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-42278
+    - https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-42278
 
 PrintNightmare CVE-2021-1675 / CVE 2021-42278:
 - MSRC: 
