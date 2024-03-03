@@ -5,6 +5,9 @@ Collection of Active Directory links for purple teamers.
 > [!NOTE]
 > This is in-progress :)
 
+> [!WARNING]
+> The domains could be changed or compromised over time. You may visit the links at your own risk.
+
 # Compliance
 
 A compliance framework ensures that an organization follows legal and industry standards.
@@ -45,6 +48,95 @@ Windows Security Baselines:
 # Honeys
 
 - https://github.com/0x4D31/deception-as-detection/S
+
+# Evasion
+
+Hiding Stuff:
+- https://attl4s.github.io/assets/pdf/UNDERSTANDING_AND_HIDING_YOUR_OPERATIONS.pdf
+
+Syscalls:
+- https://d01a.github.io/syscalls/
+
+Malware Development Basics:
+- https://otterhacker.github.io/Malware/Introduction/0%20-%20Introduction.html
+- https://cocomelonc.github.io/
+
+Bypass AV/EDR summary:
+- https://matro7sh.github.io/BypassAV/
+- https://luemmelsec.github.io/Circumventing-Countermeasures-In-AD/
+- https://synzack.github.io/Blinding-EDR-On-Windows/
+- https://s3cur3th1ssh1t.github.io/A-tale-of-EDR-bypass-methods/
+
+Shellcoding:
+- https://xacone.github.io/custom_shellcode.html
+
+Windows API:
+- https://noelit911.github.io/Introduction-to-the-Windows-API/#
+- https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-api-list
+- https://learn.microsoft.com/en-us/windows/win32/apiindex/windows-apisets
+
+Bypass AMSI:
+- https://rxored.github.io/post/csharploader/bypassing-amsi-with-csharp/
+- https://ret2desync.github.io/using-msbuild-bypass-powershell-clm-amsi-scriptlogging/
+- https://icyguider.github.io/2021/07/21/Bypass-AMSI-via-PowerShell-with-Zero-Effort.html
+
+Process PID Spoofing Detection:
+- https://detection.fyi/elastic/detection-rules/windows/defense_evasion_parent_process_pid_spoofing/?query=process
+
+Process Hollowing:
+- https://rxored.github.io/post/malware/process-hollowing/process-hollowing/
+- https://alexfrancow.github.io/red-team/OffensiVe-Security-with-V-2-Process-Hollowing/
+- https://alexfrancow.github.io/red-team/OffensiVe-Security-with-V-Shellcode-Execution/
+- https://alexfrancow.github.io/red-team/OffensiVe-Security-with-V-3-XOR/
+- https://alexfrancow.github.io/red-team/OffensiVe-Security-with-V-4-Caesar/
+
+Under Radar:
+- https://crypt0ace.github.io/posts/Staying-under-the-Radar/
+- https://crypt0ace.github.io/posts/Staying-under-the-Radar-Part-2/
+- https://crypt0ace.github.io/posts/Staying-under-the-Radar-Part-3/
+
+Shellcode Injection:
+- https://noelit911.github.io/Payload-Unleashed-Shellcode-Injection/
+
+COFF Loader:
+- https://otterhacker.github.io/Malware/CoffLoader.html
+
+APC Injection:
+- https://noelit911.github.io/Payload-Unleashed-APC-Injection/
+
+DLL Injection:
+- https://noelit911.github.io/Payload-Unleashed-DLL-Injection/
+- https://skr1x.github.io/reflective-loading-portable-executable-memory/
+- https://xacone.github.io/remote-reflective-dll-injection.html
+- https://otterhacker.github.io/Malware/Remote%20DLL%20Injection.html
+- https://otterhacker.github.io/Malware/Reflective%20DLL%20injection.html
+
+DLL Sideloading:
+- https://github.com/georgesotiriadis/Chimera
+- https://www.redpacketsecurity.com/chimera-automated-dll-sideloading-tool-with-edr-evasion-capabilities/
+- https://www.crowdstrike.com/blog/dll-side-loading-how-to-combat-threat-actor-evasion-techniques/
+
+ETW:
+- https://otterhacker.github.io/Malware/ETW.html
+- https://whiteknightlabs.com/2021/12/11/bypassing-etw-for-fun-and-profit/
+- https://thewover.github.io/Cruller/
+- https://0xstarlight.github.io/posts/Bypassing-Windows-Defender/
+- https://benjitrapp.github.io/attacks/2024-02-11-offensive-etw/
+- https://reprgm.github.io/2023/08/30/lets-make-malware-part-11/
+- https://lougerard.github.io/me/posts/THM-monitoringevasion/
+- https://damonmohammadbagher.github.io/Posts/11Feb2021x.html
+
+Function Hooking:
+- https://otterhacker.github.io/Malware/Function%20hooking.html
+
+Kernel Callback:
+- https://otterhacker.github.io/Malware/Kernel%20callback.html
+
+Module Stomping:
+- https://otterhacker.github.io/Malware/Module%20stomping.html
+
+Gate Techniques:
+- https://trickster0.github.io/posts/Halo's-Gate-Evolves-to-Tartarus-Gate/
 
 # Authentication Protocols Security
 
@@ -166,6 +258,8 @@ Custom SSP:
     - https://adsecurity.org/?p=3458
     - https://adsecurity.org/?p=3513
     - https://redsiege.com/tools-techniques/2020/10/detecting-kerberoasting/
+    - https://detection.fyi/tsale/sigma_rules/windows_exploitation/kerberoasting_activity/?query=kerber
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_posh_request_ticket/?query=kerberos
 - Kerberoasting Defenses:
     - https://www.lepide.com/blog/how-to-prevent-kerberoasting-attacks/
 
@@ -194,8 +288,6 @@ Custom SSP:
 
 - AS-REQ Roasting Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/asreqroast
-- AS-REQ Roasting Detections:
-- AS-REQ Roasting Defenses:
 
 ### Kerberos Diamond Tickets 
 
@@ -204,6 +296,7 @@ Custom SSP:
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/diamond-ticket.md
     - https://www.trustedsec.com/blog/a-diamond-in-the-ruff
 - Kerberos Diamond Tickets Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Diamond Tickets Defenses:
 - Prevent Kerberos Diamond Tickets:
 
@@ -213,6 +306,7 @@ Custom SSP:
     - https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/golden
     - https://www.youtube.com/watch?v=v0xKYSkyI6Q
 - Kerberos Golden Tickets Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Golden Tickets Defenses:
 - Prevent Kerberos Golden Tickets:
     - https://medium.com/attivotechblogs/protecting-against-kerberos-golden-silver-and-pass-the-ticket-ptt-attacks-9e5b0e262975
@@ -224,6 +318,7 @@ Custom SSP:
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/silver-ticket.md
     - https://www.youtube.com/watch?v=k9IGSmZaEHk
 - Kerberos Silver Tickets Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Silver Tickets Defenses:
 - Prevent Kerberos Silver Tickets:
 
@@ -234,6 +329,7 @@ Custom SSP:
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/bronze-bit
     - https://www.hub.trimarcsecurity.com/post/leveraging-the-kerberos-bronze-bit-attack-cve-2020-17049-scenarios-to-compromise-active-directory
 - Kerberos Bronze Tickets Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Bronze Tickets Defenses:
 - Prevent Kerberos Bronze Tickets:
 
@@ -242,6 +338,7 @@ Custom SSP:
 - Kerberos Sapphire Tickets Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/sapphire
 - Kerberos Sapphire Tickets Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Sapphire Tickets Defenses:
 - Prevent Kerberos Sapphire Tickets:
 
@@ -251,6 +348,7 @@ Custom SSP:
     - https://www.thehacker.recipes/ad/movement/kerberos/ptt
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/pass-the-ticket.md
 - Kerberos Pass-The-Ticket Detections:
+    - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Pass-The-Ticket Defenses:
 - Prevent Kerberos Pass-The-Ticket (PTT):
 
@@ -388,8 +486,10 @@ Custom SSP:
     - https://github.com/doosec101/LDAP-Anonymous
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-ldap.md
 - LDAP Detection:
-- LDAP Defense:
-- Enable LDAPS: 
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/ldap/win_ldap_recon/?query=ldap
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/security/win_security_susp_ldap_dataexchange/?query=ldap
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_ldap_attributes/?query=ldap
+- LDAP Defense: 
     - https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/enable-ldap-over-ssl-3rd-certification-authority
     - https://support.microsoft.com/en-gb/topic/2020-2023-and-2024-ldap-channel-binding-and-ldap-signing-requirements-for-windows-kb4520412-ef185fb8-00f7-167d-744c-f299a66fc00a
 - LDAPS in Clients:
@@ -403,6 +503,8 @@ Custom SSP:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/dns-spoofing
 - DNS Detection:
     - https://www.fortinet.com/resources/cyberglossary/dns-poisoning
+    - https://detection.fyi/elastic/detection-rules/ml/command_and_control_ml_packetbeat_dns_tunneling/?query=dns
+    - https://detection.fyi/elastic/detection-rules/ml/command_and_control_ml_packetbeat_rare_dns_question/?query=dns
 - DNS Defense:
     - https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj200221(v=ws.11)
 - Enable DNSSEC: 
@@ -430,7 +532,7 @@ Custom SSP:
     - https://www.infosecmatter.com/metasploit-module-library/?mm=auxiliary/spoof/mdns/mdns_response
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/llmnr-nbtns-mdns-spoofing
 - mDNS Detection:
-    - Filter port 5353/UDP traffic
+    - Monitor port 5353/UDP traffic
 - Disable mDNS: 
     - https://techcommunity.microsoft.com/t5/networking-blog/mdns-in-the-enterprise/ba-p/3275777
 
@@ -448,7 +550,10 @@ Custom SSP:
 - WPAD Attacks:
     - https://notes.justin-p.me/notes/methodology/internal/active-directory/wpad/
 - WPAD Detections:
+    - https://www.extrahop.com/company/blog/2017/detect-wpad-exploit/
+    - https://www.sentinelone.com/blog/in-the-wild-wpad-attack-how-threat-actors-abused-flawed-protocol-for-years/
 - WPAD Defenses:
+    - https://www.thewindowsclub.com/how-to-disable-web-proxy-auto-discovery-wpad-in-windows
 - Disable WPAD via Registry: 
     - https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/disable-http-proxy-auth-features
 
@@ -458,6 +563,7 @@ Custom SSP:
     - https://cqr.company/web-vulnerabilities/unsecured-remote-procedure-calls-rpc/
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/135-pentesting-msrpc.md
 - RPC Detections:
+    - https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-access-restrict-clients-allowed-to-make-remote-sam-calls
 - RPC Defenses:
     - https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.RemoteProcedureCalls::RpcRestrictRemoteClients
     - https://learn.microsoft.com/en-us/windows-server/security/rpc-interface-restrict
@@ -487,6 +593,7 @@ Custom SSP:
     - https://www.elastic.co/guide/en/security/current/incoming-execution-via-winrm-remote-shell.html
     - https://in.security/2021/05/03/detecting-lateral-movement-via-winrm-using-kql/
     - https://cyberwarfare.live/a-unified-purple-teaming-approach-on-winrm-investigation-and-detection/
+    - https://detection.fyi/elastic/detection-rules/windows/lateral_movement_incoming_winrm_shell_execution/?query=winrm
 
 ## RDP
 
@@ -511,8 +618,9 @@ Custom SSP:
     - https://www.microsoft.com/en-us/security/blog/2022/07/26/malicious-iis-extensions-quietly-open-persistent-backdoors-into-servers/
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-web/iis-internet-information-services.md
 - IIS Detections:
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_iis_apppoolsa_pwd_appcmd/?query=iis
+    - https://detection.fyi/elastic/detection-rules/windows/defense_evasion_iis_httplogging_disabled/?query=iis
 - IIS Defenses:
-- IIS CIS Benchmarks: 
     - https://www.cisecurity.org/benchmark/microsoft_iis
 
 ## WSUS 
@@ -554,6 +662,7 @@ ADFS Golden SAML:
 - MSSQL Attacks:
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server/types-of-mssql-users.md
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server/README.md
+    - https://pentestbook.nexixsecuritylabs.com/windows-hardening/active-directory-methodology/abusing-ad-mssql
 - MSSQL Detections:
 - MSSQL Defenses:
 
@@ -589,6 +698,8 @@ ADFS Golden SAML:
 
 ## Microsoft's Distributed File System Namespace Management (MS-DFSNM)
 
+- MDS-DFSNM:
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dfsnm/95a506a8-cae6-4c42-b19d-9c1ed1223979
 - MS-DFSNM Attacks:
     - https://www.thehacker.recipes/ad/movement/mitm-and-coerced-authentications/ms-dfsnm
 - MS-DFSNM Detections:
@@ -793,6 +904,14 @@ Trust key:
 - Extra SID Detections:
     - https://www.sentinelone.com/blog/windows-sid-history-injection-exposure-blog/
 - Extra SID Defenses:
+    - https://activedirectoryfaq.com/2015/10/active-directory-sid-filtering/
+    - https://learn.microsoft.com/en-us/defender-for-identity/security-assessment-unsecure-sid-history-attribute
+
+> Remediation: Remove SIDHistory attribute.
+> Mitigation: Apply SID filtering. However, SID filtering could be bypassed.
+
+- SID Filtering Bypass:
+    - https://blog.improsec.com/tech-blog/sid-filter-as-security-boundary-between-domains-part-4-bypass-sid-filtering-research
 
 ### MSSQL Trusted Links
 
@@ -801,25 +920,24 @@ Trust key:
     - https://redfoxsec.com/blog/exploiting-ms-sql-servers/
     - https://www.adversify.co.uk/escalating-privileges-via-linked-database-servers/
     - https://github.com/carlospolop/hacktricks/tree/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server
-- MSSQL Trusted Links Detections:
-- MSSQL Trusted Links Defenses:
+    - https://github.com/gmh5225/awesome-hacktricks/blob/master/windows-hardening/active-directory-methodology/mssql-trusted-links.md
+
+> Remediation: Disable MSSQL Trusted Links. However, this could impact the network.
+> Mitigation: Reduce the permissions to specific authorized users and apply the principle of least privilege.
 
 ## Child Domain to Forest
 
-### Extra SIDs Parent/Child
+### Known Parent/Child
 
+- Kerberos Parent/Child or Child/Parent Attacks:
+    - https://blog.improsec.com/tech-blog/sid-filter-as-security-boundary-between-domains-part-2-known-ad-attacks-from-child-to-parent
+- Golden gMSA Trust:
+    - https://blog.improsec.com/tech-blog/sid-filter-as-security-boundary-between-domains-part-5-golden-gmsa-trust-attack-from-child-to-parent
 - Extra SID Parent/Child Attacks:
     - https://ppn.snovvcrash.rocks/pentest/infrastructure/ad/attack-trusts
     - https://harmj0y.medium.com/a-guide-to-attacking-domain-trusts-ef5f8992bb9d
-- Extra SID Parent/Child Detections:
-- Extra SID Parent/Child Defenses:
-
-### Extra SIDs Child/Parent
-
 - Extra SID Child/Parent Attacks:
     - https://blog.improsec.com/tech-blog/sid-filter-as-security-boundary-between-domains-part-2-known-ad-attacks-from-child-to-parent
-- Extra SID Child/Parent Detections:
-- Extra SID Child/Parent Defenses:
 
 # Access Tokens
 
@@ -883,6 +1001,9 @@ Logon script:
 DACL Detections:
 - https://trustedsec.com/blog/a-hitch-hackers-guide-to-dacl-based-detections-part-2
 
+Privileged Users and Groups:
+- https://detection.fyi/sigmahq/sigma/windows/builtin/security/win_security_account_discovery/?query=groups
+
 ## Users
 
 - Users DACL:
@@ -902,6 +1023,7 @@ DACL Detections:
 - Services DACL:
 - Services DACL Attacks:
 - Services DACL Detections:
+    - https://detection.fyi/sigmahq/sigma/windows/process_creation/proc_creation_win_registry_privilege_escalation_via_service_key/?query=esc
 - Services DACL Defenses:
 
 ## Computers
@@ -1132,17 +1254,20 @@ The Active Directory Recycle Bin is a feature in the Active Directory Domain Ser
     - https://blog.netwrix.com/2021/11/30/active-directory-object-recovery-recycle-bin/
 - Active Directory Recycle Bin Attacks:
     - https://learn.microsoft.com/en-us/answers/questions/472286/active-directory-recycle-bin-risks
-- Active Directory Recycle Bin Detections:
 - Active Directory Recycle Bin Defenses:
+    - https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/the-ad-recycle-bin-understanding-implementing-best-practices-and/ba-p/396944
 
 # Windows Subsystem for Linux
 
 The Windows Subsystem for Linux is a Microsoft feature that enables a system to run a Linux subsystem operating system.
 
 - Windows Subsystem for Linux:
+    - https://learn.microsoft.com/en-us/windows/wsl/about
 - Windows Subsystem for Linux Attacks:
       https://blog.lumen.com/windows-subsystem-for-linux-wsl-threats/
 - Windows Subsystem for Linux Detections:
+    - https://learn.microsoft.com/en-us/windows/wsl/troubleshooting
+    - https://github.com/Microsoft/WSL/blob/master/CONTRIBUTING.md#8-detailed-logs
 - Windows Subsystem for Linux Defenses:
     - https://blog.qualys.com/vulnerabilities-threat-research/2022/03/22/implications-of-windows-subsystem-for-linux-for-adversaries-defenders-part-1
 
@@ -1280,6 +1405,7 @@ DPAPI:
     - https://www.thehacker.recipes/ad/movement/credentials/dumping/dpapi-protected-secrets
     - https://www.ired.team/offensive-security/credential-access-and-credential-dumping/reading-dpapi-encrypted-secrets-with-mimikatz-and-c++
 - DPAPI Detections:
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_domain_backup_dpapi_private_keys/?query=mimik
 - DPAPI Defenses:
 
 ## LSASS
@@ -1288,13 +1414,17 @@ DPAPI:
     - https://notes.justin-p.me/notes/methodology/internal/active-directory/credential-access/
     - https://www.thehacker.recipes/ad/movement/credentials/dumping/lsass
 - LSASS Detections:
+    - https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/
+    - https://detection.fyi/sigmahq/sigma/windows/process_access/proc_access_win_lsass_memdump/
 - LSASS Defenses:
+    - https://en.wikipedia.org/wiki/Credential_Guard
 
 ## SAM
 
 - SAM Attacks:
     - https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/credential-dumping/security-account-manager-sam
 - SAM Detections:
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_copy_ntds_sam_volshadowcp_cmdline/?query=sam
 - SAM Defenses:
 
 ## NTDS
@@ -1304,7 +1434,9 @@ DPAPI:
     - https://www.thehacker.recipes/ad/movement/credentials/dumping/ntds
     - https://attack.mitre.org/techniques/T1003/003/
     - https://www.youtube.com/watch?v=Qy8INpl0Al4
+    - https://blog.netwrix.com/2021/11/30/extracting-password-hashes-from-the-ntds-dit-file/
 - NTDS Detections:
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_copy_ntds_sam_volshadowcp_cmdline/?query=sam
 - NTDS Defenses:
 
 ## Windows Credential Manager
@@ -1314,8 +1446,8 @@ DPAPI:
     - https://attack.mitre.org/techniques/T1555/004/
     - https://viperone.gitbook.io/pentest-everything/everything/everything-active-directory/credential-access/credentials-from-password-stores/windows-credential-manager
 - Windows Credential Manager Detections:
-- Windows Credential Manager Defenses:
     - https://wazuh.com/blog/hunting-for-windows-credential-access-attacks/
+- Windows Credential Manager Defenses:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-access-do-not-allow-storage-of-passwords-and-credentials-for-network-authentication
 
 ## Azure AD Connect
@@ -1357,6 +1489,7 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://itm4n.github.io/lsass-runasppl/
 - LSA Detections:
     - https://www.microsoft.com/en-us/security/blog/2022/10/05/detecting-and-preventing-lsass-credential-dumping-attacks/
+    - https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection
 - LSA Defenses:
     - https://blog.netwrix.com/2022/01/11/understanding-lsa-protection/
     - https://learn.microsoft.com/en-us/answers/questions/1422926/lsa-protection-and-attack-surface-rules
@@ -1375,6 +1508,8 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://redcanary.com/blog/windows-registry-attacks-threat-detection/
     - https://www.darkreading.com/cyberattacks-data-breaches/detecting-the-undetectable-windows-registry-attacks
 - Registry Hive Detections:
+    - https://detection.fyi/elastic/detection-rules/_deprecated/discovery_query_registry_via_reg/?query=registry
+    - https://detection.fyi/elastic/detection-rules/windows/persistence_registry_uncommon/?query=registry
 - Registry Hive Defenses:
 
 ## PowerShell History Credentials
@@ -1410,6 +1545,8 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/dcsync.md
     - https://www.youtube.com/watch?v=_m3u13Df7Fc
 - DCSync Detections:
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_dcsync_replication_rights/?query=dcsync
+    - https://detection.fyi/elastic/detection-rules/windows/credential_access_dcsync_newterm_subjectuser/?query=dcsync
 - DCSync Defenses:
 
 ## AdminDSHolder
@@ -1435,54 +1572,75 @@ MiTM Attacks:
 
 # Classic Vulnerabilities
 
-> Overall recommendation is to use a patch management platform to keep every asset updated with the latests patches.
+> Mitigation: Overall recommendation is to use a patch management platform to keep every asset updated with the latests patches.
 
 Certifried CVE-2022-26923: 
-- MSRC: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26923
-- Microsoft Documentation: https://support.microsoft.com/en-us/topic/april-11-2023-kb5025230-os-build-20348-1668-28a5446e-6389-4a5b-ae3f-e942a604f2d3
+- MSRC: 
+    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-26923
+- Microsoft Documentation: 
+    - https://support.microsoft.com/en-us/topic/april-11-2023-kb5025230-os-build-20348-1668-28a5446e-6389-4a5b-ae3f-e942a604f2d3
 
 EternalBlue MS17-010:
-- Microsoft Documentation: https://support.microsoft.com/en-us/topic/ms17-010-security-update-for-windows-smb-server-march-14-2017-435c22fb-5f9b-f0b3-3c4b-b605f4e6a655
+- Microsoft Documentation: 
+    - https://support.microsoft.com/en-us/topic/ms17-010-security-update-for-windows-smb-server-march-14-2017-435c22fb-5f9b-f0b3-3c4b-b605f4e6a655
 
 HiveNightmare CVE-2021-36934:
-- MSRC: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36934
-- Article: https://news.sophos.com/en-us/2021/07/22/hivenightmare-aka-serioussam-vulnerability-what-to-do/
+- MSRC: 
+    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36934
+- Article: 
+    - https://news.sophos.com/en-us/2021/07/22/hivenightmare-aka-serioussam-vulnerability-what-to-do/
 
 Log4Shell CVE-2021-44228:
-- Microsoft Defender for Endpoint mitigation: https://learn.microsoft.com/en-us/microsoft-365/security/defender-vulnerability-management/tvm-manage-log4shell-guidance?view=o365-worldwide
+- Microsoft Defender for Endpoint mitigation: 
+    - https://learn.microsoft.com/en-us/microsoft-365/security/defender-vulnerability-management/tvm-manage-log4shell-guidance?view=o365-worldwide
 
 Kerberos Could Allow Elevation of Privilege MS14-068 / CVE-2014-6324:
-- Microsoft documentation: https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-068
+- Microsoft documentation: 
+    - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-068
 
 SamAccountName CVE-2021-42287 / NoPAC CVE-2021-42278:
-- MSRC: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-42278
+- MSRC: 
+    - ://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-42278
 
 PrintNightmare CVE-2021-1675 / CVE 2021-42278:
-- MSRC: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34527
+- MSRC: 
+    - https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34527
 
 PrivExchange CVE-2019-0724 / CVE 2019-0686:
-- Tool: https://github.com/dirkjanm/PrivExchange
-- Article: https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/
-- Patch: https://techcommunity.microsoft.com/t5/exchange-team-blog/released-february-2019-quarterly-exchange-updates/ba-p/609061
+- Tool: 
+    - https://github.com/dirkjanm/PrivExchange
+- Article: 
+    - https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/
+- Patch: 
+    - https://techcommunity.microsoft.com/t5/exchange-team-blog/released-february-2019-quarterly-exchange-updates/ba-p/609061
 
 ProxyLogon CVE-2021-26855:
-- CISA Advisory: https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-062a
-- Blog Post: https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/
-- Patch: https://msrc.microsoft.com/blog/2021/03/multiple-security-updates-released-for-exchange-server/
+- CISA Advisory: 
+    - https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-062a
+- Blog Post: 
+    - https://www.microsoft.com/en-us/security/blog/2021/03/02/hafnium-targeting-exchange-servers/
+- Patch: 
+    - https://msrc.microsoft.com/blog/2021/03/multiple-security-updates-released-for-exchange-server/
 
 ProxyShell CVE-2021-31207 / CVE-2021-34473 / CVE-2021-34523:
-- Blog Post: https://techcommunity.microsoft.com/t5/exchange-team-blog/proxyshell-vulnerabilities-and-your-exchange-server/ba-p/2684705
+- Blog Post: 
+    - https://techcommunity.microsoft.com/t5/exchange-team-blog/proxyshell-vulnerabilities-and-your-exchange-server/ba-p/2684705
 - Workarounds: 
     - https://news.sophos.com/en-us/2021/08/23/proxyshell-vulnerabilities-in-microsoft-exchange-what-to-do/
     - https://www.mandiant.com/resources/blog/pst-want-shell-proxyshell-exploiting-microsoft-exchange-servers
 
 SMBGhost CVE-2020-0796:
-- Patch: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0796
+- Patch: 
+    - https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0796
 
 SYSVOL GPP MS14-025:
-- Article: https://support.microsoft.com/en-us/topic/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevation-of-privilege-may-13-2014-60734e15-af79-26ca-ea53-8cd617073c30
-- Security Bulletin: https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-025?redirectedfrom=MSDN
+- Article: 
+    - https://support.microsoft.com/en-us/topic/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevation-of-privilege-may-13-2014-60734e15-af79-26ca-ea53-8cd617073c30
+- Security Bulletin: 
+    - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-025?redirectedfrom=MSDN
 
 ZeroLogon CVE-2020-1472:
-- Article: https://www.tenable.com/blog/cve-2020-1472-microsoft-finalizes-patch-for-zerologon-to-enable-enforcement-mode-by-default
-- Patch: https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-1472
+- Article: 
+    - https://www.tenable.com/blog/cve-2020-1472-microsoft-finalizes-patch-for-zerologon-to-enable-enforcement-mode-by-default
+- Patch: 
+    - https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-1472
