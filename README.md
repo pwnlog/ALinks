@@ -8,6 +8,169 @@ Collection of Active Directory links for purple teamers.
 > [!WARNING]
 > The domains could be changed or compromised over time. You may visit the links at your own risk.
 
+# ToC
+
+- [Compliance](#compliance)
+- [Security Baselines](#security-baselines)
+- [Microsoft Security Blog](#microsoft-security-blog)
+- [Hardening](#hardening)
+- [Honeys](#honeys)
+- [Red Team](#red-team)
+- [Evasion](#evasion)
+- [Authentication Protocols Security](#authentication-protocols-security)
+    - [Logon Types](#logon-types)
+    - [LANMAN](#lanman)
+        - [LM](#lm)
+        - [NTLM](#ntlm)
+        - [NTLMv1](#ntlmv1)
+        - [NTLMv2](#ntlmv2)
+    - [Kerberos](#kerberos)
+        - [Kerberos 5](#kerberos-5)
+    - [MsCache2](#mscache2)
+    - [GSS-API/SSPI](#gss-apisspi)
+        - [SSP](#ssp)
+        - [Kerberos SSP](#kerberos-ssp)
+        - [NTLM SSP](#ntlm-ssp)
+        - [Negotiate SSP](#negotiate-ssp)
+        - [Digest SSP](#digest-ssp)
+        - [Secure Channel SSP](#secure-channel-ssp)
+        - [Cred SSP](#cred-ssp)
+        - [Custom SSP](#custom-ssp)
+- [Network Protocols Security](#network-protocols-security)
+    - [NTLM](#ntlm)
+        - [Pass The Hash](#pass-the-hash)
+    - [Kerberos](#kerberos)
+        - [Kerberoasting](#kerberoasting)
+        - [Timeroasting](#timeroasting)
+        - [AS-REP Roasting](#as-rep-roasting)
+        - [AS-REQ Roasting](#as-req-roasting)
+        - [Kerberos Diamond Tickets](#kerberos-diamond-tickets)
+        - [Kerberos Golden Tickets](#kerberos-golden-tickets)
+        - [Kerberos Silver Tickets](#kerberos-silver-tickets)
+        - [Kerberos Bronze Tickets](#kerberos-bronze-tickets)
+        - [Kerberos Sapphire Tickets](#kerberos-sapphire-tickets)
+        - [Kerberos Pass-The-Ticket](#kerberos-pass-the-ticket-ptt)
+        - [Kerberos Unconstrained Delegation](#kerberos-unconstrained-delegation)
+        - [Kerberos Constrained Delegation](#kerberos-constrained-delegation)
+        - [Kerberos Resource-Based Constrained Delegation](#kerberos-resource-based-constrained-delegation-rbcd)
+        - [Kerberos Pass The Certificate](#kerberos-pass-the-certificate)
+        - [Kerberos UnPAC The Hash](#kerberos-unpac-the-hash)
+        - [Kerberos OverPass The Hash](#kerberos-overpass-the-hash--pass-the-key)
+        - [Kerberos Pre-Authentication Bruteforce](#kerberos-pre-authentication-bruteforce)
+    - [ARP](#arp)
+    - [DHCP](#dhcp)
+    - [DHCPv6](#dhcpv6)
+    - [SMB](#smb)
+    - [LDAP](#ldap)
+    - [DNS](#dns)
+    - [LLMNR](#llmnr)
+    - [mDNS](#mdns)
+    - [NetBIOS](#netbios)
+    - [WPAD](#wpad)
+    - [RPC](#rpc)
+    - [SAMRPC](#samrpc)
+    - [WinRM](#winrm)
+    - [RDP](#rdp)
+    - [IIS](#iis)
+    - [WSUS](#wsus)
+    - [Active Directory Federation Services](#active-directory-federation-services)
+    - [SSH](#ssh)
+    - [DFS](#dfs)
+    - [MSSQL](#mssql)
+    - [Active Directory Integrated DNS ADIDNS](#active-directory-integrated-dns-adidns)
+    - [Microsoft's Encrypting File System Remote MS-EFSR](#microsofts-encrypting-file-system-remote-ms-efsr)
+    - [Microsoft’s Print Spooler MS-RPRN](#microsofts-print-spooler-ms-rprn)
+    - [Microsoft's File Server Remote VSS MS-FSRVP](#microsofts-file-server-remote-vss-ms-fsrvp)
+    - [Microsoft's Distributed File System Namespace Management MS-DFSNM](#microsofts-distributed-file-system-namespace-management-ms-dfsnm)
+- [Read Only Domain Controller](#read-only-domain-controller)
+- [Active Directory Certificate Services](#active-directory-certificate-services)
+    - [ESC1](#esc1)
+    - [ESC2](#esc2)
+    - [ESC3](#esc3)
+    - [ESC4](#esc4)
+    - [ESC5](#esc5)
+    - [ESC6](#esc6)
+    - [ESC7](#esc7)
+    - [ESC8](#esc8)
+    - [ESC9](#esc9)
+    - [ESC10](#esc10)
+    - [ESC11](#esc11)
+    - [ESC13](#esc13)
+- [Trust Relationships](#trust-relationships)
+    - [Trust Direction](#trust-direction)
+    - [Trust Transitivity](#trust-transitivity)
+    - [SID Filtering](#sid-filtering)
+    - [Selective Authentication](#selective-authentication)
+    - [Trust Types](#trust-types)
+    - [Trust Key](#trust-key)
+    - [Forest to Forest](#forest-to-forest)
+        - [Extra SID / SID History](#extra-sid--sid-history)
+        - [MSSQL Trusted Links](#mssql-trusted-links)
+    - [Child Domain to Forest](#child-domain-to-forest)
+        - [Known Parent/Child](#known-parentchild)
+- [Access Tokens](#access-tokens)
+- [Discretionary Access Control Lists DACLs and Access Control Entries ACEs](#discretionary-access-control-lists-dacls-and-access-control-entries-aces)
+    - [Users](#users)
+    - [Groups](#groups)
+    - [Services](#services)
+    - [Computers](#computers)
+    - [Directories](#directories)
+    - [Files](#files)
+    - [Group Policy](#group-policy)
+- [Group Policy Object GPO](#group-policy-object-gpo)
+    - [GPO Scopes](#gpo-scopes)
+    - [Group Policy Template](#group-policy-template)
+    - [Group Policy Container](#group-policy-container)
+    - [GPO Inheritance](#gpo-inheritance)
+- [Users](#users)
+    - [Local Users](#local-users)
+    - [Domain Users](#domain-users)
+    - [Azure AD Users](#azure-ad-users)
+    - [Built-in Privileged Users](#built-in-privileged-users)
+- [Groups](#groups)
+- [DCOM](#dcom)
+- [Comments](#comments)
+- [Pre-Created Computer Account](#pre-created-computer-account)
+- [Shadow Credentials](#shadow-credentials)
+- [Group Managed Service Accounts gMSA](#group-managed-service-accounts-gmsa)
+- [System Services](#system-services)
+- [Task Scheduler](#task-scheduler)
+- [Local Administrator Password Solution LAPS](#local-administrator-password-solution-laps)
+- [Application Control](#application-control)
+    - [AppLocker](#applocker)
+    - [WDAC](#wdac)
+- [Backups](#backups)
+    - [Windows Shadow Copies](#windows-shadow-copies)
+    - [Active Directory Recycle Bin](#active-directory-recycle-bin)
+- [Windows Subsystem for Linux](#windows-subsystem-for-linux)
+- [Drivers](#drivers)
+- [Unquoted Paths](#unquoted-paths)
+- [JIT & JEA](#jit--jea)
+- [Microsoft Defender for Identity MDI](#microsoft-defender-for-identity-mdi)
+- [Credentials](#credentials)
+    - [Directory Service Restore Mode DSRM](#directory-service-restore-mode-dsrm)
+    - [DPAPI](#dpapi)
+    - [LSASS](#lsass)
+    - [SAM](#sam)
+    - [NTDS](#ntds)
+    - [Windows Credential Manager](#windows-credential-manager)
+    - [Azure AD Connect](#azure-ad-connect)
+    - [LSA](#lsa)
+    - [RunAs Saved Credentials](#runas-saved-credentials)
+    - [Registry Hive Credentials](#registry-hive-credentials)
+    - [PowerShell History Credentials](#powershell-history-credentials)
+    - [Clipboard Credentials](#clipboard-credentials)
+- [Persistence](#persistence)
+    - [DCShadow](#dcshadow)
+    - [DCSync](#dcsync)
+    - [AdminDSHolder](#admindsholder)
+    - [DLL Hijacking Persistence](#dll-hijacking-persistence)
+- [Account Takeover](#account-takeover)
+    - [AD Attribute](#ad-attribute)
+    - [Shadow Credentials](#shadow-credentials)
+- [MiTM](#mitm)
+- [Classic Vulnerabilities](#classic-vulnerabilities)
+
 # Compliance
 
 A compliance framework ensures that an organization follows legal and industry standards.
@@ -41,17 +204,30 @@ Windows Security Baselines:
 - Microsoft Security Baselines: https://learn.microsoft.com/en-us/windows/security/operating-system-security/device-management/windows-security-configuration-framework/windows-security-baselines
 - Microsoft Security Baselines Blog: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
 
-# Blogs
+# Microsoft Security Blog
 
+Microsoft Security Blog:
 - https://www.microsoft.com/en-us/security/blog/
+
+# Hardening 
+
+Hardening projects:
+- https://github.com/HotCakeX/Harden-Windows-Security
+- https://github.com/0x6d69636b/windows_hardening
 
 # Honeys
 
-- https://github.com/0x4D31/deception-as-detection/S
+Honey projects:
+- https://github.com/0x4D31/deception-as-detection/
+
+# Red Team
+
+Red Team Infrastructure projects:
+- https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki
 
 # Evasion
 
-Hiding Stuff:
+Hiding Operations:
 - https://attl4s.github.io/assets/pdf/UNDERSTANDING_AND_HIDING_YOUR_OPERATIONS.pdf
 
 Syscalls:
@@ -146,9 +322,14 @@ Types of Logons:
 - https://www.manageengine.com/products/active-directory-audit/learn/what-are-logon-types.html
 - https://learn.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types
 
+## LANMAN
+
+LANMAN wiki:
+- https://en.wikipedia.org/wiki/LAN_Manager
+
 ### LM
 
-Prevent LM hash: 
+LM Authentication
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password
 
 ### NTLM
@@ -162,7 +343,7 @@ NTLM Authentication:
 NTLMv1 Authentication:
 - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/464551a8-9fc4-428e-b3d3-bc5bfb2e73a5
 
-### NTMLv2
+### NTLMv2
 
 NTLMv2 Authentication:
 - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-nlmp/5e550938-91d4-459f-b67d-75d70009e3f3
@@ -240,6 +421,13 @@ Custom SSP:
 
 # Network Protocols Security
 
+## NTLM
+
+### Pass The Hash
+
+- Pass The Hash Attacks/Detections/Mitigations/Respond:
+    - https://www.netwrix.com/pass_the_hash_attack_explained.html
+
 ## Kerberos
 
 ### Kerberoasting
@@ -262,6 +450,7 @@ Custom SSP:
     - https://detection.fyi/elastic/detection-rules/windows/credential_access_posh_request_ticket/?query=kerberos
 - Kerberoasting Defenses:
     - https://www.lepide.com/blog/how-to-prevent-kerberoasting-attacks/
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
 
 ### Timeroasting
 
@@ -298,7 +487,7 @@ Custom SSP:
 - Kerberos Diamond Tickets Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Diamond Tickets Defenses:
-- Prevent Kerberos Diamond Tickets:
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
 
 ### Kerberos Golden Tickets
 
@@ -307,9 +496,12 @@ Custom SSP:
     - https://www.youtube.com/watch?v=v0xKYSkyI6Q
 - Kerberos Golden Tickets Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
+    - https://www.netwrix.com/how_golden_ticket_attack_works.html
 - Kerberos Golden Tickets Defenses:
-- Prevent Kerberos Golden Tickets:
+    - https://www.semperis.com/blog/how-to-defend-against-golden-ticket-attacks/
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
     - https://medium.com/attivotechblogs/protecting-against-kerberos-golden-silver-and-pass-the-ticket-ptt-attacks-9e5b0e262975
+    - https://www.netwrix.com/how_golden_ticket_attack_works.html
 
 ### Kerberos Silver Tickets
 
@@ -320,7 +512,8 @@ Custom SSP:
 - Kerberos Silver Tickets Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Silver Tickets Defenses:
-- Prevent Kerberos Silver Tickets:
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
+    - https://www.netwrix.com/silver_ticket_attack_forged_service_tickets.html
 
 ### Kerberos Bronze Tickets
 
@@ -331,7 +524,7 @@ Custom SSP:
 - Kerberos Bronze Tickets Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Bronze Tickets Defenses:
-- Prevent Kerberos Bronze Tickets:
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
 
 ### Kerberos Sapphire Tickets
 
@@ -340,7 +533,7 @@ Custom SSP:
 - Kerberos Sapphire Tickets Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Sapphire Tickets Defenses:
-- Prevent Kerberos Sapphire Tickets:
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
 
 ### Kerberos Pass-The-Ticket (PTT)
 
@@ -350,20 +543,21 @@ Custom SSP:
 - Kerberos Pass-The-Ticket Detections:
     - https://unit42.paloaltonetworks.com/next-gen-kerberos-attacks/
 - Kerberos Pass-The-Ticket Defenses:
-- Prevent Kerberos Pass-The-Ticket (PTT):
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
+    - https://www.netwrix.com/pass_the_ticket.html
 
 ### Kerberos Unconstrained Delegation
 
 - Kerberos Delegation: 
     - https://learn.microsoft.com/en-us/defender-for-identity/security-assessment-unconstrained-kerberos
-- Kerberos Unconstrained Delegation:
+- Kerberos Unconstrained Delegation Attacks:
     - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/domain-compromise-via-unrestricted-kerberos-delegation
     - https://deephacking.tech/unconstrained-delegation-kerberos/
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/unconstrained
-- Kerberos Unconstrained Attacks:
-- Kerberos Unconstrained Detections:
-- Kerberos Unconstrained Defenses:
-
+- Kerberos Unconstrained Delegation Detections:
+- Kerberos Unconstrained Delegation Defenses:
+    - https://hdm.io/writing/Mitigating%20Service%20Account%20Credential%20Theft%20on%20Windows.pdf
+    - https://blog.netwrix.com/2022/12/02/unconstrained-delegation/
 
 ### Kerberos Constrained Delegation
 
@@ -375,23 +569,22 @@ Custom SSP:
         - https://www.thehacker.recipes/ad/movement/kerberos/delegations/s4u2self-abuse
     - S4U2Self and S4U2Proxy
         - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a
-- Kerberos Constrained Attacks:
+- Kerberos Constrained Delegation Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/constrained
-- Kerberos Constrained Detections:
-- Kerberos Constrained Defenses:
-- Kerberos Constrained Delegation:
     - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-kerberos-constrained-delegation
-
+- Kerberos Constrained Delegation Detections:
+- Kerberos Constrained Delegation Defenses:
+    - https://blog.netwrix.com/2023/04/21/attacking-constrained-delegation-to-elevate-access/
 
 ### Kerberos Resource-Based Constrained Delegation (RBCD)
 
 - Kerberos Resource-Based Constrained Attacks:
     - https://www.thehacker.recipes/ad/movement/kerberos/delegations/rbcd
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/resource-based-constrained-delegation.md
-- Kerberos Resource-Based Constrained Detections:
-- Kerberos Resource-Based Constrained Defenses:
-- Kerberos Resource-Based Constrained Delegation:
     - https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/resource-based-constrained-delegation-ad-computer-object-take-over-and-privilged-code-execution
+- Kerberos Resource-Based Constrained Delegation Detections:
+- Kerberos Resource-Based Constrained Delegation Defenses:
+    - https://blog.netwrix.com/2022/09/29/resource-based-constrained-delegation-abuse/
 
 ### Kerberos Pass The Certificate
 
@@ -419,6 +612,7 @@ Custom SSP:
     - https://www.thehacker.recipes/ad/movement/kerberos/pre-auth-bruteforce
 - Kerberos Pre-Authentication Detections:
 - Kerberos Pre-Authentication Defenses:
+    - https://www.tenable.com/blog/how-to-stop-the-kerberos-pre-authentication-attack-in-active-directory
 
 ## ARP
 
@@ -638,6 +832,7 @@ Custom SSP:
 
 ADFS Golden SAML:
 - https://swisskyrepo.github.io/InternalAllTheThings/active-directory/ad-adfs-federation-services/
+- https://www.netwrix.com/golden_saml_attack.html
 
 ## SSH
 
@@ -664,7 +859,13 @@ ADFS Golden SAML:
     - https://github.com/carlospolop/hacktricks/blob/master/network-services-pentesting/pentesting-mssql-microsoft-sql-server/README.md
     - https://pentestbook.nexixsecuritylabs.com/windows-hardening/active-directory-methodology/abusing-ad-mssql
 - MSSQL Detections:
+    - https://detection.fyi/search/?query=mssql
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/application/mssqlserver/win_mssql_failed_logon/?query=mssql
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/application/mssqlserver/win_mssql_xp_cmdshell_change/?query=mssql
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/application/mssqlserver/win_mssql_xp_cmdshell_audit_log/?query=mssql
+    - https://detection.fyi/sigmahq/sigma/windows/builtin/application/mssqlserver/win_mssql_disable_audit_settings/?query=mssql
 - MSSQL Defenses:
+    - https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-server-security-best-practices?view=sql-server-ver16
 
 ## Active Directory Integrated DNS (ADIDNS)
 
@@ -1166,8 +1367,10 @@ Shadow Credentials:
     - https://www.youtube.com/watch?v=mHZ6MqWubd8
 - Group Managed Service Accounts (gMSA) Detections:
     - https://www.trustedsec.com/blog/splunk-spl-queries-for-detecting-gmsa-attacks
+    - https://www.netwrix.com/gmsa_exploitation_attack.html
 - Group Managed Service Accounts (gMSA) Defenses:
-    - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/recover-from-golden-gmsa-attack
+    - https://learn.microsoft.com/en-us/troubleshoot/windows-server/windows-security/recover-from-golden-gmsa-
+    - https://www.netwrix.com/gmsa_exploitation_attack.html
 
 # System Services
 
@@ -1283,6 +1486,7 @@ There are two types of drivers:
     - https://github.com/magicsword-io/LOLDrivers
 - Drivers Detections:
 - Drivers Defenses:
+    - https://www.crowdstrike.com/blog/scattered-spider-attempts-to-avoid-detection-with-bring-your-own-vulnerable-driver-tactic/
 
 # Unquoted Paths
 
@@ -1521,6 +1725,7 @@ In summary, LSA is the conceptual framework and set of processes responsible for
 - PowerShell History Detections:
 - PowerShell History Defenses:
 - Disable PowerShell History:
+    - `Set-PSReadlineOption –HistorySaveStyle SaveNothing`
 
 ## Clipboard Credentials
 
@@ -1539,6 +1744,8 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://www.youtube.com/watch?v=iGcei7yk2Pk
 - DCShadow Detections:
 - DCShadow Defenses:
+    - https://blog.quest.com/dcshadow-attacks-what-they-are-and-how-to-defend-against-them/
+    - https://www.netwrix.com/how_dcshadow_persistence_attack_works.html
 
 ## DCSync
 
@@ -1546,24 +1753,37 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://github.com/carlospolop/hacktricks/blob/master/windows-hardening/active-directory-methodology/dcsync.md
     - https://www.youtube.com/watch?v=_m3u13Df7Fc
 - DCSync Detections:
+    - https://www.netwrix.com/privilege_escalation_using_mimikatz_dcsync.html
     - https://detection.fyi/elastic/detection-rules/windows/credential_access_dcsync_replication_rights/?query=dcsync
     - https://detection.fyi/elastic/detection-rules/windows/credential_access_dcsync_newterm_subjectuser/?query=dcsync
 - DCSync Defenses:
+    - https://www.netwrix.com/privilege_escalation_using_mimikatz_dcsync.html
 
 ## AdminDSHolder
 
 - AdminSDHolder Attacks:
     - https://www.youtube.com/watch?v=lY35jQ46iPo
+- AdminSDHolder Detections:
+    - https://www.netwrix.com/adminsdholder_modification_ad_persistence.html
+- AdminSDHolder Defenses:
+    - https://www.netwrix.com/adminsdholder_modification_ad_persistence.html
 
 ## DLL Hijacking Persistence
 
 - DLL Hijacking Attacks:
     - https://www.youtube.com/watch?v=3eROsG_WNpE
 
-# AD Attribute 
+# Account Takeover
+
+## AD Attribute 
 
 - AD Attribute Takeover Attacks:
     - https://www.youtube.com/watch?v=tFb3ow25iNg
+
+## Shadow Credentials
+
+- Shadow Credentials via Key Trust:
+    - https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab
 
 # MiTM
 
