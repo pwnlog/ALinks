@@ -313,6 +313,31 @@ Module Stomping:
 
 Gate Techniques:
 - https://trickster0.github.io/posts/Halo's-Gate-Evolves-to-Tartarus-Gate/
+- 
+
+# Active Directory
+
+AD DS Models:
+- Directory System Agent:
+    - https://learn.microsoft.com/en-us/windows/win32/ad/directory-system-agent
+- Global Catalog:
+    - https://learn.microsoft.com/en-us/windows/win32/ad/global-catalog
+- Data Model:
+    - https://learn.microsoft.com/en-us/windows/win32/ad/data-model
+- Schema:
+    - https://learn.microsoft.com/en-us/windows/win32/ad/schema
+- Administration Model:
+    - https://learn.microsoft.com/en-us/windows/win32/ad/administration-model
+
+AD Schema:
+- https://learn.microsoft.com/en-us/windows/win32/ad/active-directory-schema
+- https://learn.microsoft.com/en-us/windows/win32/ad/about-the-active-directory-schema
+
+Delegation:
+- https://learn.microsoft.com/en-us/windows/win32/ad/delegation
+
+Inheritance:
+- https://learn.microsoft.com/en-us/windows/win32/ad/inheritance
 
 # Authentication Protocols Security
 
