@@ -191,6 +191,10 @@ DISA STIG Benchmarks:
 Microsoft Security Compliance Toolkit: 
 - https://www.microsoft.com/en-us/download/details.aspx?id=55319
 
+Microsoft Purview Compliance Manager:
+- https://www.microsoft.com/en-us/security/business/risk-management/microsoft-purview-compliance-manager
+- https://learn.microsoft.com/en-us/purview/purview-compliance-portal
+
 Security policies documentation:
 - https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/security-policy-settings
 
@@ -313,7 +317,6 @@ Module Stomping:
 
 Gate Techniques:
 - https://trickster0.github.io/posts/Halo's-Gate-Evolves-to-Tartarus-Gate/
-- 
 
 # Active Directory
 
@@ -952,8 +955,11 @@ AD CS Blog:
 CA PKI Tiers:
 - https://www.keytos.io/blog/pki/what-is-a-ca-hierarchy-and-which-ca-hierarchy-should-i-use.html
 
-CA Two Tier:
+CA PKI Two Tier:
 - https://www.informaticar.net/implementing-two-tier-pki-on-windows-server-2022-part-1/
+
+PKI as a Service:
+- https://www.digicert.com/faq/trust-and-pki/what-is-pki-as-a-service
 
 ## ESC1
 
@@ -1192,6 +1198,15 @@ Discretionary Access Control Lists (DACLs) and Access Control Entries (ACEs) doc
 - https://learn.microsoft.com/en-us/windows/win32/secauthz/access-control-lists
 - https://learn.microsoft.com/en-us/windows/win32/secauthz/dacls-and-aces
 
+Empty/Null DACLs:
+- https://learn.microsoft.com/en-us/windows/win32/secauthz/null-dacls-and-empty-dacls
+
+Allowing Anonymous:
+- https://learn.microsoft.com/en-us/windows/win32/secauthz/allowing-anonymous-access
+
+Security Descriptor Definition Language (SDDL):
+- https://learn.microsoft.com/en-us/windows/win32/secauthz/security-descriptor-definition-language
+
 Overview Attacks and Defense:
 - https://techcommunity.microsoft.com/t5/security-compliance-and-identity/active-directory-access-control-list-8211-attacks-and-defense/ba-p/250315
 
@@ -1230,56 +1245,6 @@ DACL Detections:
 
 Privileged Users and Groups:
 - https://detection.fyi/sigmahq/sigma/windows/builtin/security/win_security_account_discovery/?query=groups
-
-## Users
-
-- Users DACL:
-- Users DACL Attacks:
-- Users DACL Detections:
-- Users DACL Defenses:
-
-## Groups
-
-- Groups DACL:
-- Groups DACL Attacks:
-- Groups DACL Detections:
-- Groups DACL Defenses:
-
-## Services
-
-- Services DACL:
-- Services DACL Attacks:
-- Services DACL Detections:
-    - https://detection.fyi/sigmahq/sigma/windows/process_creation/proc_creation_win_registry_privilege_escalation_via_service_key/?query=esc
-- Services DACL Defenses:
-
-## Computers
-
-- Computers DACL:
-- Computers DACL Attacks:
-- Computers DACL Detections:
-- Computers DACL Defenses:
-
-## Directories
-
-- Directories DACL:
-- Directories DACL Attacks:
-- Directories DACL Detections:
-- Directories DACL Defenses:
-
-## Files
-
-- Files DACL:
-- Files DACL Attacks:
-- Files DACL Detections:
-- Files DACL Defenses:
-
-## Group Policy
-
-- Group Policy DACL:
-- Group Policy DACL Attacks:
-- Group Policy DACL Detections:
-- Group Policy DACL Defenses:
 
 # Group Policy Object (GPO)
 
@@ -1667,7 +1632,6 @@ DPAPI:
     - https://blog.netwrix.com/2021/11/30/extracting-password-hashes-from-the-ntds-dit-file/
 - NTDS Detections:
     - https://detection.fyi/elastic/detection-rules/windows/credential_access_copy_ntds_sam_volshadowcp_cmdline/?query=sam
-- NTDS Defenses:
 
 ## Windows Credential Manager
 
@@ -1730,7 +1694,10 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://systemweakness.com/runas-for-hackers-6b2243633091
     - https://medium.com/falconforce/falconfriday-e4554e9e6665
 - RunAs Detections:
+    - https://www.splunk.com/en_us/blog/security/from-registry-with-love-malware-registry-abuses.html
 - RunAs Defenses:
+    - Remove `/savecred` from `runas.exe` commands
+    - https://stackoverflow.com/a/23634095
 
 ## Registry Hive Credentials
 
@@ -1740,7 +1707,6 @@ In summary, LSA is the conceptual framework and set of processes responsible for
 - Registry Hive Detections:
     - https://detection.fyi/elastic/detection-rules/_deprecated/discovery_query_registry_via_reg/?query=registry
     - https://detection.fyi/elastic/detection-rules/windows/persistence_registry_uncommon/?query=registry
-- Registry Hive Defenses:
 
 ## PowerShell History Credentials
 
@@ -1748,7 +1714,9 @@ In summary, LSA is the conceptual framework and set of processes responsible for
     - https://securityintelligence.com/articles/all-about-powershell-attacks/
     - https://michaelkoczwara.medium.com/windows-privilege-escalation-dbb908cce8d4
 - PowerShell History Detections:
+    - https://superuser.com/a/1509327
 - PowerShell History Defenses:
+    - Disable PowerShell History
 - Disable PowerShell History:
     - `Set-PSReadlineOption –HistorySaveStyle SaveNothing`
 
@@ -1797,6 +1765,8 @@ In summary, LSA is the conceptual framework and set of processes responsible for
 
 - DLL Hijacking Attacks:
     - https://www.youtube.com/watch?v=3eROsG_WNpE
+- DLL Hijacking
+    - https://www.mandiant.com/resources/blog/abusing-dll-misconfigurations
 
 # Account Takeover
 
