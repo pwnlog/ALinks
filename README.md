@@ -2,18 +2,13 @@
 
 Collection of Active Directory links for purple teamers.
 
-> [!NOTE]
-> This is in-progress :)
-
-> [!WARNING]
-> The domains could be changed or compromised over time. You may visit the links at your own risk.
-
 # ToC
 
 - [Compliance](#compliance)
 - [Security Baselines](#security-baselines)
 - [Microsoft Security Blog](#microsoft-security-blog)
 - [Hardening](#hardening)
+- [Monitoring](#monitoring)
 - [Honeys](#honeys)
 - [Red Team](#red-team)
 - [Evasion](#evasion)
@@ -218,6 +213,32 @@ Microsoft Security Blog:
 Hardening projects:
 - https://github.com/HotCakeX/Harden-Windows-Security
 - https://github.com/0x6d69636b/windows_hardening
+
+Microsoft Defender for Cloud:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/apply-security-baseline
+
+Microsoft Defender for Cloud Adaptive Network Hardening:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/adaptive-network-hardening
+
+# Monitoring
+
+Data Collection:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-agentless-data-collection
+
+File Integrity Monitoring:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/file-integrity-monitoring-overview
+
+Just In Time (JIT):
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/just-in-time-access-overview?tabs=defender-for-container-arch-aks
+
+Endpoint Detection & Response (EDR):
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/integration-defender-for-endpoint
+
+Vulnerability Assessments:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/remediate-vulnerability-findings-vm
+
+DNS Alerts:
+- https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-dns-alerts
 
 # Honeys
 
