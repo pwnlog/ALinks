@@ -1,4 +1,4 @@
-# AD Purple
+# ALinks
 
 Collection of Active Directory links for purple teamers.
 
