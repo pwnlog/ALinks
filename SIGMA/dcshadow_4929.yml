@@ -1,0 +1,18 @@
+title: DCShadow - Rogue Domain Controller Registration
+id: 01d2c793-fb1e-4ad9-9bd5-7f4102e4eb4c
+description: Detects registration of rogue domain controllers as in DCShadow attack
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4929
+  condition: selection
+fields:
+  - SubjectUserName
+  - ComputerName
+level: critical
+tags:
+  - attack.impact
+  - attack.t1207

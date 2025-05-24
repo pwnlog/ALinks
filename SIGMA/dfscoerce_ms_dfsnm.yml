@@ -1,0 +1,23 @@
+title: DFSCoerce (MS-DFSNM) Coercion Attempt
+id: 12dba6b5-d3df-4665-a494-f9bc9e928c7d
+description: Detects coercion via Distributed File System Namespace Management Protocol
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 5145
+    ShareName|contains: "IPC$"
+    ObjectType|contains: "DFSNM"
+  condition: selection
+fields:
+  - SubjectUserName
+  - ShareName
+  - ObjectType
+falsepositives:
+  - Legitimate DFS management
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1210

@@ -1,0 +1,50 @@
+title: Suspicious AD CS Certificate Enrollment or Template Modification
+id: 2af728ae-842d-4d32-87b1-b626cae395ef
+description: Detects potentially malicious certificate enrollment or AD CS template modification (ESC1-ESC16, AD CS attacks)
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  # Enrollment: Unusual certificate request
+  enroll_cert:
+    EventID:
+      - 4886   # Certificate Services received a certificate request
+      - 4887   # Certificate Services approved a request
+      - 4899   # Certificate Services template was updated
+      - 4898   # Certificate Services loaded a template
+  filter_template_mod:
+    EventID:
+      - 4899
+      - 4898
+    SubjectUserName|contains:
+      - 'svc_'
+      - 'user'
+      - 'computer'
+  filter_cert_enroll:
+    EventID:
+      - 4886
+      - 4887
+    SubjectUserName|contains:
+      - 'svc_'
+      - 'user'
+      - 'computer'
+  condition: enroll_cert or filter_template_mod or filter_cert_enroll
+fields:
+  - SubjectUserName
+  - TemplateName
+  - CertificateTemplateOid
+  - RequestID
+  - Requester
+  - EventID
+  - ComputerName
+falsepositives:
+  - Routine certificate requests from managed systems or admins
+level: high
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1550.003
+  - attack.t1110.003
+  - attack.t1552.004
+  - attack.t1189

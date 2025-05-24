@@ -1,0 +1,23 @@
+title: NTLM Relay - Abnormal Outbound Authentication
+id: 664ea6f7-b8c3-47e6-87e0-3e6e0bca0f4d
+description: Detects abnormal outbound NTLM authentication following a coercion attack
+status: experimental
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4624
+    AuthenticationPackageName: NTLM
+    IpAddress|not_in: [expected_IPs]
+  condition: selection
+fields:
+  - TargetUserName
+  - IpAddress
+  - WorkstationName
+falsepositives:
+  - Normal legacy NTLM authentication
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1557.001

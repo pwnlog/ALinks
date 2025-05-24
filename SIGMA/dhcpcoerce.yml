@@ -1,0 +1,22 @@
+title: DHCPCoerce - Malicious DHCP Authentication Coercion
+id: 917a032b-002f-4963-b015-42ecce5c7281
+description: Detects DHCP server authentication coercion (NTLM relay precursor)
+status: stable
+logsource:
+  product: windows
+  service: dhcpserver
+detection:
+  selection:
+    EventID: 1046
+    Description|contains: "Authentication"
+  condition: selection
+fields:
+  - HostName
+  - UserName
+  - IPAddress
+falsepositives:
+  - Normal DHCP authentication
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1210

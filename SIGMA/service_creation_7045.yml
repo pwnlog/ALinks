@@ -1,0 +1,21 @@
+title: New Windows Service Creation
+id: 34a3a1a7-c57a-48c8-b7b9-2c998d227cd1
+description: Detects new service creation that can be used for privilege escalation, persistence, or lateral movement
+status: stable
+logsource:
+  product: windows
+  service: system
+detection:
+  selection:
+    EventID: 7045
+  condition: selection
+fields:
+  - ServiceName
+  - ImagePath
+  - AccountName
+falsepositives:
+  - IT service deployment
+level: high
+tags:
+  - attack.persistence
+  - attack.t1543.003

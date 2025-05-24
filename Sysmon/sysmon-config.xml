@@ -1,0 +1,106 @@
+<Sysmon schemaversion="4.80">
+  <EventFiltering>
+    <!-- 1. Comprehensive process creation logging -->
+    <ProcessCreate onmatch="include" />
+
+    <!-- 2. Process termination logging -->
+    <ProcessTerminate onmatch="include" />
+
+    <!-- 3. Driver loads (for BYOVD, PrintNightmare, kernel persistence) -->
+    <DriverLoad onmatch="include">
+      <ImageLoaded condition="ends with">.sys</ImageLoaded>
+    </DriverLoad>
+
+    <!-- 4. DLL/Image loads (DLL hijacking, credential dumping, temp folder abuse) -->
+    <ImageLoad onmatch="include">
+      <ImageLoaded condition="contains">lsass</ImageLoaded>
+      <ImageLoaded condition="contains">ntds</ImageLoaded>
+      <ImageLoaded condition="contains">sam</ImageLoaded>
+      <ImageLoaded condition="contains">krb5</ImageLoaded>
+      <ImageLoaded condition="ends with">.dll</ImageLoaded>
+      <ImageLoaded condition="contains">\\Temp\\</ImageLoaded>
+    </ImageLoad>
+
+    <!-- 5. File creations (key for persistence, tampering, GPO/SYSVOL attacks) -->
+    <FileCreate onmatch="include">
+      <TargetFilename condition="contains">\\SYSVOL\\</TargetFilename>
+      <TargetFilename condition="contains">\\NTDS\\</TargetFilename>
+      <TargetFilename condition="ends with">.ps1</TargetFilename>
+      <TargetFilename condition="ends with">.bat</TargetFilename>
+      <TargetFilename condition="ends with">.cmd</TargetFilename>
+      <TargetFilename condition="ends with">.exe</TargetFilename>
+      <TargetFilename condition="contains">\\Temp\\</TargetFilename>
+      <TargetFilename condition="ends with">.dll</TargetFilename>
+      <TargetFilename condition="ends with">.js</TargetFilename>
+    </FileCreate>
+
+    <!-- 6. File creation time (timestomping detection, evasion) -->
+    <FileCreateTime onmatch="include" />
+
+    <!-- 7. Registry changes (persistence, security policy, credential theft) -->
+    <RegistryEvent onmatch="include">
+      <TargetObject condition="contains">Winlogon</TargetObject>
+      <TargetObject condition="contains">Run</TargetObject>
+      <TargetObject condition="contains">LSA</TargetObject>
+      <TargetObject condition="contains">SAM</TargetObject>
+      <TargetObject condition="contains">MS\Windows\CurrentVersion\Group Policy</TargetObject>
+      <TargetObject condition="contains">AdminSDHolder</TargetObject>
+      <TargetObject condition="contains">msDS-KeyCredentialLink</TargetObject>
+      <TargetObject condition="contains">msDS-AllowedToActOnBehalfOfOtherIdentity</TargetObject>
+      <TargetObject condition="contains">msDS-AllowedToDelegateTo</TargetObject>
+    </RegistryEvent>
+
+    <!-- 8. Pipe creation and connection (WMI, DCSync, DCShadow, PsExec, etc) -->
+    <PipeEvent onmatch="include" />
+
+    <!-- 9. Network connections to critical AD/infra ports -->
+    <NetworkConnect onmatch="include">
+      <DestinationPort condition="is">88</DestinationPort>
+      <DestinationPort condition="is">389</DestinationPort>
+      <DestinationPort condition="is">445</DestinationPort>
+      <DestinationPort condition="is">636</DestinationPort>
+      <DestinationPort condition="is">135</DestinationPort>
+      <DestinationPort condition="is">53</DestinationPort>
+      <DestinationPort condition="is">3389</DestinationPort>
+      <DestinationPort condition="is">5985</DestinationPort>
+      <DestinationPort condition="is">5986</DestinationPort>
+      <DestinationPort condition="is">8530</DestinationPort>
+      <DestinationPort condition="is">3268</DestinationPort>
+      <DestinationPort condition="is">3269</DestinationPort>
+      <DestinationPort condition="is">80</DestinationPort>
+      <DestinationPort condition="is">443</DestinationPort>
+    </NetworkConnect>
+
+    <!-- 10. WMI event subscription (persistent attack & lateral movement) -->
+    <WmiEventFilter onmatch="include" />
+    <WmiEventConsumer onmatch="include" />
+    <WmiEventConsumerToFilter onmatch="include" />
+
+    <!-- 11. Raw disk access (credential dumping, NTDS/SAM reads) -->
+    <RawAccessRead onmatch="include" />
+
+    <!-- 12. Remote thread creation (code injection, Cobalt Strike, Mimikatz) -->
+    <CreateRemoteThread onmatch="include" />
+
+    <!-- 13. Clipboard events (credential exfiltration, lolbins) -->
+    <ClipboardChange onmatch="include" />
+
+    <!-- 14. ProcessAccess for credential dumping or tampering -->
+    <ProcessAccess onmatch="include">
+      <TargetImage condition="contains">lsass.exe</TargetImage>
+      <TargetImage condition="contains">svchost.exe</TargetImage>
+      <TargetImage condition="contains">services.exe</TargetImage>
+      <TargetImage condition="contains">winlogon.exe</TargetImage>
+      <TargetImage condition="contains">ntds.dit</TargetImage>
+    </ProcessAccess>
+
+    <!-- 15. DNS queries (tunneling, C2, exfil, recon) -->
+    <DnsQuery onmatch="include" />
+
+    <!-- 16. File streams (alternate data stream persistence/exfil) -->
+    <FileStream onmatch="include" />
+
+    <!-- 17. File delete (covering tracks) -->
+    <FileDelete onmatch="include" />
+  </EventFiltering>
+</Sysmon>

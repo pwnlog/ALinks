@@ -1,0 +1,24 @@
+title: ACL Abuse - Sensitive Rights Granted
+id: 53a8dbee-82b1-4691-880e-47cbf6b2b0a6
+description: Detects WriteDACL or GenericAll permission assignments on sensitive AD objects
+status: experimental
+logsource:
+  product: windows
+  service: security
+detection:
+  selection1:
+    EventID: 5136
+    Properties|contains: WriteDACL
+  selection2:
+    EventID: 5136
+    Properties|contains: GenericAll
+  condition: selection1 or selection2
+fields:
+  - SubjectUserName
+  - ObjectName
+falsepositives:
+  - Delegation, admin actions
+level: high
+tags:
+  - attack.persistence
+  - attack.privilege_escalation

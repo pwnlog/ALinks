@@ -1,0 +1,22 @@
+title: MS-RPRN (PrinterBug) Coercion Attempt
+id: 2b124b10-4050-4c4a-9dc6-f799def1d4ba
+description: Detects usage of MS-RPRN (PrinterBug) coercion technique via Print System Remote Protocol from unusual sources
+status: stable
+logsource:
+  product: windows
+  service: printservice-admin
+detection:
+  selection:
+    EventID: 808
+    Param2|contains: "OpenPrinter"
+  condition: selection
+fields:
+  - Computer
+  - Param2
+  - User
+falsepositives:
+  - Legitimate printer management by IT
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1210

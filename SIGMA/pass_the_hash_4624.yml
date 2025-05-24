@@ -1,0 +1,27 @@
+title: Pass-the-Hash - Suspicious Logon with NTLM Hash
+id: 849e3062-cc94-4a45-b32d-69de312d8c07
+description: Detects logons likely using Pass-the-Hash (non-typical source, service, or admin account)
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4624
+    LogonType:
+      - 3
+      - 9
+      - 10
+    AuthenticationPackageName: NTLM
+  filter:
+    WorkstationName|in:
+      - expected_admin_hosts
+  condition: selection and not filter
+fields:
+  - TargetUserName
+  - IpAddress
+  - WorkstationName
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1075

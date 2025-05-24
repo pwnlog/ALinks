@@ -1,0 +1,21 @@
+title: GPO Script or Startup Modification
+id: 503a37b2-6802-40db-9e4b-ec32516bc1ed
+description: Detects modification of group policy objects, often for persistence or code execution
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 5136
+    ObjectType: groupPolicyContainer
+  condition: selection
+fields:
+  - SubjectUserName
+  - ObjectName
+falsepositives:
+  - Legitimate GPO changes by IT
+level: high
+tags:
+  - attack.persistence
+  - attack.t1484.001

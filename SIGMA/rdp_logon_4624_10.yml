@@ -1,0 +1,21 @@
+title: RDP Logon
+id: d5f6f6ad-3342-414d-9b70-07f44c609c12
+description: Detects interactive logons via RDP (LogonType 10)
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4624
+    LogonType: 10
+  condition: selection
+fields:
+  - TargetUserName
+  - IpAddress
+falsepositives:
+  - Legitimate remote admin
+level: medium
+tags:
+  - attack.lateral_movement
+  - attack.t1021.001

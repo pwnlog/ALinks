@@ -1,0 +1,21 @@
+title: Kerberoasting - High Volume TGS Requests
+id: b409ee0a-33a4-415f-ae9c-5acbe2a2f92f
+description: Detects Kerberoasting by high volume of TGS requests to service accounts
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4769
+    ServiceName|endswith: '$'
+  condition: selection
+fields:
+  - TargetUserName
+  - ServiceName
+falsepositives:
+  - Service account logins at scale
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1558.003

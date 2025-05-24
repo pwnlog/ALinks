@@ -1,0 +1,22 @@
+title: PetitPotam EFSRPC Coercion Attempt
+id: f7fd571e-91ee-4567-8927-f5e45c80a218
+description: Detects EFSRPC (PetitPotam) coercion activity by looking for unexpected EFSRPC calls
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 5145
+    ShareName|contains: "\\\\*EFS"
+  condition: selection
+fields:
+  - SubjectUserName
+  - ShareName
+  - ObjectType
+falsepositives:
+  - Legitimate EFS activity (rare)
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1210

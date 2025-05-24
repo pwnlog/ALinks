@@ -1,0 +1,21 @@
+title: Print Spooler Abuse - Remote Print to DC
+id: 30ae2d52-f913-47b8-97e2-3ec3a2ff35fa
+description: Detects suspicious remote print jobs submitted to domain controllers
+status: experimental
+logsource:
+  product: windows
+  service: printservice-admin
+detection:
+  selection:
+    EventID: 307
+    PrinterName|contains: "DomainController"
+  condition: selection
+fields:
+  - PrinterName
+  - Computer
+falsepositives:
+  - Unusual, but possible for print infra
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1210

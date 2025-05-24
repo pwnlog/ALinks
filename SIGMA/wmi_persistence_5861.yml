@@ -1,0 +1,20 @@
+title: WMI Event Subscription for Persistence
+id: c86a3b6e-6f30-49d3-8b8c-20e23e86b345
+description: Detects creation of WMI event filters/consumers/bindings (persistence)
+status: stable
+logsource:
+  product: windows
+  service: microsoft-windows-wmi-activity/operational
+detection:
+  selection:
+    EventID: 5861
+  condition: selection
+fields:
+  - User
+  - EventNamespace
+falsepositives:
+  - Monitoring tools, IT scripts
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1084

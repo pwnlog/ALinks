@@ -1,0 +1,21 @@
+title: Suspicious Scheduled Task Creation
+id: e5dc14f2-631d-41b2-889a-37c0db90e48a
+description: Detects new scheduled tasks that could be used for persistence or privilege escalation
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4698
+  condition: selection
+fields:
+  - SubjectUserName
+  - TaskName
+  - Command
+falsepositives:
+  - Legitimate admin task creation
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1053.005

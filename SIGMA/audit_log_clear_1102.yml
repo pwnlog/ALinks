@@ -1,0 +1,19 @@
+title: Security Event Log Cleared
+id: 2d9c06c3-859a-4b11-b0b8-755b1e92db3b
+description: Detects security event log clearing, which may indicate evidence destruction
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+fields:
+  - SubjectUserName
+falsepositives:
+  - Legitimate event log maintenance
+level: critical
+tags:
+  - attack.defense_evasion
+  - attack.t1070.001

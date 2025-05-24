@@ -1,0 +1,20 @@
+title: Registry RunKey Persistence
+id: d21f96c7-9d21-4e35-8928-0f4d7b8a9abf
+description: Detects modifications to Registry Run keys for persistence
+status: stable
+logsource:
+  category: registry_event
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: "\\Run"
+  condition: selection
+fields:
+  - TargetObject
+  - Details
+falsepositives:
+  - Software installation, GPO
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1547.001

@@ -1,0 +1,19 @@
+title: DCSync/Replication Rights Usage
+id: f186eb87-3e9f-4e8b-8539-bb9e446fd39a
+description: Detects usage of directory replication rights, as leveraged in DCSync attacks
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4662
+    ObjectType: 'DS-Replication-Get-Changes'
+  condition: selection
+fields:
+  - SubjectUserName
+  - ObjectName
+level: critical
+tags:
+  - attack.credential_access
+  - attack.t1003.006

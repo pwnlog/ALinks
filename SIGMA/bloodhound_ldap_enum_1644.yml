@@ -1,0 +1,21 @@
+title: BloodHound/LDAP Enumeration via 1644
+id: d8eb4be5-14ea-49d7-bf2b-7f84b8ea5081
+description: Detects high-frequency LDAP enumeration (e.g., BloodHound, PowerView)
+status: experimental
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1644
+    SearchFilter|contains: objectClass
+  condition: selection
+fields:
+  - SubjectUserName
+  - SearchFilter
+falsepositives:
+  - Directory audit tools, inventory scans
+level: medium
+tags:
+  - attack.discovery
+  - attack.t1087

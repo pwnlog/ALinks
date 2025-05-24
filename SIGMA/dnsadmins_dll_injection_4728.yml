@@ -1,0 +1,23 @@
+title: DNSAdmins Group Membership Change
+id: f6b7a7e6-7e36-4d52-9eb1-d5f6336d981f
+description: Detects additions to DNSAdmins group, which can lead to SYSTEM code execution on DNS server
+status: stable
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID:
+      - 4728
+      - 4732
+    TargetUserName: DNSAdmins
+  condition: selection
+fields:
+  - SubjectUserName
+  - MemberName
+falsepositives:
+  - Admin group management
+level: critical
+tags:
+  - attack.persistence
+  - attack.t1136.002
